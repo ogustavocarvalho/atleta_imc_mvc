@@ -21,8 +21,9 @@ class ViewController: UIViewController {
     
     @IBAction func calcular(_ sender: Any) {
         //remove os espacos extras colocando o conteúdo entre duas constantes
-        let pesoTexto = txtPeso.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let alturaTexto = txtAltura.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let pesoTexto = txtPeso.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let alturaTexto = txtAltura.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
         
         let a = Atleta()
         
