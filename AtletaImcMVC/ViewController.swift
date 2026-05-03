@@ -40,6 +40,11 @@ class ViewController: UIViewController {
             return
         }
         
+        // Verifica se os valores são maiores que zero
+        if peso <= 0 || altura <= 0 {
+            mostrarAlerta(mensagem: "Peso e altura precisam ser maiores que 0")
+            return
+        }
         
         //Funcão para receber o texto  e mostrar mensagem
         func mostrarAlerta(mensagem: String) {
