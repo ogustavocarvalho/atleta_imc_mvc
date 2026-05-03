@@ -33,6 +33,14 @@ class ViewController: UIViewController {
         let pesoFormatado = pesoTexto.replacingOccurrences(of: ",", with: ".")
         let alturaFormatada = alturaTexto.replacingOccurrences(of: ",", with: ".")
         
+        //Verifica se os valores são numéricos
+        guard let peso = Float(pesoFormatado),
+                let altura = Float(alturaFormatada) else {
+            mostrarAlerta(mensagem: "Digite apenas números validos")
+            return
+        }
+        
+        
         //Funcão para receber o texto  e mostrar mensagem
         func mostrarAlerta(mensagem: String) {
             let alerta: UIAlertController = UIAlertController(
