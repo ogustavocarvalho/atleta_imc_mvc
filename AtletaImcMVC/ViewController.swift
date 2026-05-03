@@ -24,6 +24,25 @@ class ViewController: UIViewController {
         let pesoTexto = txtPeso.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let alturaTexto = txtAltura.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         
+        //Verifica se os campos estão vazios
+        if pesoTexto.isEmpty || alturaTexto.isEmpty {
+            mostrarAlerta(mensagem: "Preencha os campos de peso e altura")
+        }
+        
+        
+        //Funcão para receber o texto  e mostrar mensagem
+        func mostrarAlerta(mensagem: String) {
+            let alerta: UIAlertController = UIAlertController(
+                title: "Atenção",
+                message: mensagem,
+                preferredStyle: .alert)
+            alerta.addAction(UIAlertAction(
+                title: "OK",
+                style: .default)
+            )
+            present(alerta, animated: true)
+        }
+        
         
         let a = Atleta()
         
