@@ -29,6 +29,9 @@ class ViewController: UIViewController {
             mostrarAlerta(mensagem: "Preencha os campos de peso e altura")
         }
         
+        // Troca vírgula por ponto, caso seja digitado 70.5
+        let pesoFormatado = pesoTexto.replacingOccurrences(of: ",", with: ".")
+        let alturaFormatada = alturaTexto.replacingOccurrences(of: ",", with: ".")
         
         //Funcão para receber o texto  e mostrar mensagem
         func mostrarAlerta(mensagem: String) {
